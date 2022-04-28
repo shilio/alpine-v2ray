@@ -1,5 +1,5 @@
 # alpine-v2ray
 alpine的v2ray脚本
 ```shell
-bash <(curl -Lso- https://raw.githubusercontents.com/Misaka-blog/rootLogin/master/root.sh)
+wget -N --no-check-certificate https://raw.githubusercontent.com/xiaoxiang66/alpine-v2ray/main/vlenss.sh && vlenss.sh
 ```

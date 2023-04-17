@@ -7,7 +7,7 @@ apk update && apk upgrade
 apk add -t base-tools curl wget unzip nano bash
 apk add caddy
 # install xray
-wget https://github.com/XTLS/Xray-core/releases/download/v1.5.4/Xray-linux-64.zip
+wget https://github.com/XTLS/Xray-core/releases/download/v1.7.5/Xray-linux-64.zip
 unzip -d xray Xray-linux-64.zip
 mv xray/xray /usr/bin/xray
 rm -rf Xray-linux-64.zip xray
@@ -25,9 +25,9 @@ cat > /etc/xray/config.json << EOF
             "settings": {
                 "clients": [
                     {
-                        "id": "aff4fc35-d91a-4aed-8a22-6540d356e738", // 填写你的 UUID
+                        "id": "eb9f1786-ccb3-9306-7a03-e4334932b212", // 填写你的 UUID
                         "level": 0,
-                        "email": "fck_gfw@gmail.com"
+                        "email": "abc_xyz@gmail.com"
                     }
                 ],
                 "decryption": "none"
@@ -57,7 +57,7 @@ description="Xray, Penetrates Everything. Also the best v2ray-core, with XTLS su
 
 : ${xray_opts:="-config /etc/xray/config.json"}
 
-command=/usr/bin/xray
+command="/usr/bin/xray"
 command_args="run $xray_opts"
 command_user=nobody:nobody
 
@@ -75,7 +75,7 @@ $1 {
         root * /usr/share/caddy
         file_server
         reverse_proxy /up2ws 127.0.0.1:1325
-        tls fck_gfw@gmail.com
+        tls abc_xyz@gmail.com
 }
 EOF
 service caddy restart
